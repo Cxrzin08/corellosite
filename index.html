@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function copiarTexto() {
+            const codigo = "5048";
+            const textarea = document.createElement('textarea');
+            textarea.value = codigo;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            // Redireciona para o site após a cópia
+            setTimeout(function() {
+                window.location.href = "https://shop.corello.com.br";
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Redirecionando...</h1>
+        <p>Por favor, clique no botão abaixo para copiar o código de vendedora, que lhe dará 5% de desconto em todo o site. e continue para o site da CORELLO.</p>
+        <button onclick="copiarTexto()">Copiar Código e Redirecionar</button>
+    </div>
+</body>
+</html>
