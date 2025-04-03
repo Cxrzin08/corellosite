@@ -3,38 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="AYCeBZ56ABNaz4JACHuNVlJ6O0QJGEI3qm1yUdXS-oo" /> 
-    <link rel="stylesheet" href="style.css"> 
+    <meta name="google-site-verification" content="AYCeBZ56ABNaz4JACHuNVlJ6O0QJGEI3qm1yUdXS-oo" />
+    <title>Corello - Coleção Outono/Inverno</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <script>
         function copiarTexto() {
             const codigo = "5048";
-            const textarea = document.createElement('textarea');
-            textarea.value = codigo;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-
-            // Redireciona para o site após a cópia
-            setTimeout(function() {
-                window.location.href = "https://shop.corello.com.br";
-            }, 1000);
+            navigator.clipboard.writeText(codigo).then(() => {
+                const button = document.querySelector('.cta-button');
+                button.innerHTML = '<i class="fas fa-check"></i> CÓDIGO COPIADO! REDIRECIONANDO...';
+                button.classList.add('success');
+                
+                // Efeito de pulse no botão
+                button.classList.add('animate__animated', 'animate__pulse');
+                
+                // Efeito de confete sutil
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-effect';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    window.location.href = "https://shop.corello.com.br";
+                }, 1500);
+            });
         }
     </script>
 </head>
 <body>
-    <div>
+    <div class="hero-background"></div>
+    
+    <div class="main-container animate__animated animate__fadeIn">
+        <div class="brand-logo animate__animated animate__zoomIn">
+            <span>CORELLO</span>
+        </div>
+        
+        <img src="colecaoinverno.webp" alt="coleção outono e inverno" class="main-image animate__animated animate__fadeInUp">
+        
+        <div class="collection-description animate__animated animate__fadeInUp">
+            <h2 class="collection-title">COLEÇÃO OUTONO/INVERNO 2024</h2>
+            <div class="collection-highlights">
+                <div class="highlight-item">
+                    <i class="fas fa-tshirt"></i>
+                    <p>Peças em <strong>materiais premium</strong> que combinam conforto e elegância</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-palette"></i>
+                    <p>Cores <strong>terrosas e neutras</strong> perfeitas para a estação</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-cut"></i>
+                    <p>Cortes <strong>sofisticados</strong> que valorizam seu corpo</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-layer-group"></i>
+                    <p>Looks <strong>versáteis</strong> para montar combinações incríveis</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="offer-container animate__animated animate__fadeInUp animate__delay-1s">
+            <h1 class="offer-title">DESCONTO EXCLUSIVO</h1>
+            <p class="offer-description">Seu código <strong>5% OFF</strong> já está pronto!</p>
+            
+            <div class="code-display animate__animated animate__pulse animate__infinite">
+                <span>5048</span>
+            </div>
+            
+            <p class="instruction">Clique no botão abaixo para copiar automaticamente e ser redirecionado para a loja</p>
+            
+            <button onclick="copiarTexto()" class="cta-button animate__animated animate__fadeInUp animate__delay-2s">
+                <i class="fas fa-arrow-right"></i> COPIAR CÓDIGO E IR PARA A LOJA
+            </button>
+        </div>
+    </div>
+
     <script type="text/javascript">
         aclib.runBanner({
             zoneId: '9214294',
         });
     </script>
-</div>
-
-    <div class="container">
-        <h4>Por favor, clique no botão abaixo para copiar o código de vendedora, que lhe dará 5% de desconto em todo o site.</h4>
-        <h3>Continue para o site da CORELLO.</h3>
-        <button onclick="copiarTexto()">Copiar Código e Redirecionar</button>
-    </div>
 </body>
 </html>
