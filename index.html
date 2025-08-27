@@ -28,21 +28,28 @@
             });
         }
 
-        // Visitor counter logic
-        window.onload = function() {
-            // Get current visitor count from localStorage or initialize to 0
-            let visitorCount = localStorage.getItem('visitorCount') ? parseInt(localStorage.getItem('visitorCount')) : 0;
-            
-            // Increment the counter
-            visitorCount++;
-            
-            // Update localStorage
-            localStorage.setItem('visitorCount', visitorCount);
-            
-            // Display the counter
-            const counterElement = document.getElementById('visitor-counter');
-            counterElement.textContent = `${visitorCount} pessoas já visitaram esta oferta!`;
-        };
+        // Visitor counter with CounterAPI
+        async function atualizarContador() {
+            try {
+                // Incrementa o contador no CounterAPI
+                await fetch("https://counterapi.dev/v2/workspaces/corello/counters/corello_site/increment", {
+                    method: "POST"
+                });
+
+                // Busca o valor atualizado
+                const response = await fetch("https://counterapi.dev/v2/workspaces/corello/counters/corello_site");
+                const data = await response.json();
+
+                // Exibe no site
+                const counterElement = document.getElementById('visitor-counter');
+                counterElement.textContent = `${data.count} pessoas já visitaram esta oferta!`;
+            } catch (error) {
+                console.error("Erro ao atualizar contador:", error);
+                document.getElementById('visitor-counter').textContent = "Erro ao carregar visitantes.";
+            }
+        }
+
+        window.onload = atualizarContador;
     </script>
 </head>
 <body>
