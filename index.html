@@ -12,11 +12,14 @@
             const codigo = "5048";
             navigator.clipboard.writeText(codigo).then(() => {
                 const button = document.querySelector('.cta-button');
-                button.innerHTML = '<i class="fas fa-check"></i> CÓDIGO COPIADO!';
+                
+                // AQUI ESTÁ A ALTERAÇÃO: Adicionamos o texto "REDIRECIONANDO..."
+                button.innerHTML = '<i class="fas fa-check"></i> CÓDIGO COPIADO! REDIRECIONANDO...';
+                
                 button.classList.add('success');
                 button.disabled = true;
 
-                // const confetti = document.createElement('div');
+                const confetti = document.createElement('div');
                 confetti.className = 'confetti-effect';
                 document.body.appendChild(confetti);
 
