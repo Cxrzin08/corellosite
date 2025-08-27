@@ -18,6 +18,13 @@ body {
     position: relative;
 }
 
+.visitor-counter {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 20px;
+}
+
 .hero-background {
     position: fixed;
     top: 0;

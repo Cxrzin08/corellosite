@@ -27,6 +27,22 @@
                 }, 1500);
             });
         }
+
+        // Visitor counter logic
+        window.onload = function() {
+            // Get current visitor count from localStorage or initialize to 0
+            let visitorCount = localStorage.getItem('visitorCount') ? parseInt(localStorage.getItem('visitorCount')) : 0;
+            
+            // Increment the counter
+            visitorCount++;
+            
+            // Update localStorage
+            localStorage.setItem('visitorCount', visitorCount);
+            
+            // Display the counter
+            const counterElement = document.getElementById('visitor-counter');
+            counterElement.textContent = `${visitorCount} pessoas já visitaram esta oferta!`;
+        };
     </script>
 </head>
 <body>
@@ -38,8 +54,7 @@
         </div>
         
         <picture>
-            <source srcset="verao2625.webp" type="image/webp">
-            <img src="verao26.jpg" alt="verao26" class="main-image">
+            <img src="verao26.jpg" alt="Verão 2026" class="main-image">
         </picture>
         
         <div class="offer-container animate__animated animate__fadeInUp animate__delay-1s">
@@ -55,6 +70,10 @@
             <button onclick="copiarTexto()" class="cta-button animate__animated animate__fadeInUp animate__delay-2s">
                 <i class="fas fa-arrow-right"></i> COPIAR CÓDIGO E IR PARA A LOJA
             </button>
+            
+            <p id="visitor-counter" class="visitor-counter animate__animated animate__fadeInUp animate__delay-3s">
+                Carregando número de visitantes...
+            </p>
         </div>
     </div>
 
