@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Corello - Semana do Cliente</title>
+    <title>Corello - Summer Bloom</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -40,15 +40,15 @@
       async function atualizarContador() {
         try {
           const response = await fetch(
-            "https://api.counterapi.dev/v1/corellosite/semanaCliente/up"
+            "https://api.counterapi.dev/v1/corellosite/summerBloom/up"
           );
           const data = await response.json();
           const counterElement = document.getElementById("visitor-counter");
-          counterElement.textContent = `${data.count} pessoas já aproveitaram esta oferta!`;
+          counterElement.textContent = `${data.count} pessoas já descobriram a Summer Bloom!`;
         } catch (error) {
           console.error("Erro ao atualizar contador:", error);
           document.getElementById("visitor-counter").textContent =
-            "Seja um dos primeiros a aproveitar!";
+            "Seja uma das primeiras a descobrir!";
         }
       }
 
@@ -65,26 +65,25 @@
 
       <picture>
         <img
-          src="semana_cliente.jpg"
-          alt="Semana do Cliente Corello"
+          src="summer_bloom.jpg"
+          alt="Summer Bloom Collection Corello"
           class="main-image"
         />
       </picture>
 
       <div class="offer-container">
-        <h1 class="offer-title">SEMANA DO CLIENTE</h1>
+        <h1 class="offer-title">SUMMER BLOOM</h1>
         <p class="offer-description">
-          Para a Semana do Cliente, preparamos uma seleção especial com os
-          acessórios must-have da temporada, trazendo estilo, versatilidade e
-          autenticidade que transformam qualquer look!
+          A nova coleção Verão 26 ganha um novo capítulo com a coleção Summer Bloom! 
+          Flores, pedras coloridas e texturas tramadas traduzem a essência da estação 
+          em bolsas e sapatos que prometem ser o hit da temporada!
         </p>
         <div class="code-display">
           <span>5048</span>
         </div>
         <p class="instruction">
-          Nossa wishlist ganhou uma seleção exclusiva! As peças mais amadas com
-          <strong>50% OFF</strong>. Clique no botão para copiar o código e ir
-          para a loja.
+          Use o código acima e ganhe <strong>5% OFF</strong> direto no carrinho! 
+          Clique no botão para copiar o código e descobrir a nova coleção.
         </p>
         <button onclick="copiarTexto()" class="cta-button">
           <i class="fas fa-arrow-right"></i> COPIAR CÓDIGO E IR PARA A LOJA
@@ -92,27 +91,24 @@
       </div>
 
       <div class="collection-description">
-        <h2 class="collection-title">Destaques da Semana do Cliente</h2>
+        <h2 class="collection-title">Destaques da Summer Bloom</h2>
         <div class="collection-highlights">
+          <div class="highlight-item">
+            <i class="fas fa-seedling"></i>
+            <p>
+              <strong>Flores vibrantes:</strong> Estampas florais que traduzem a essência do verão.
+            </p>
+          </div>
           <div class="highlight-item">
             <i class="fas fa-gem"></i>
             <p>
-              <strong>Estilo e autenticidade:</strong> Acessórios que
-              transformam qualquer look.
+              <strong>Pedras coloridas:</strong> Detalhes em pedras que adicionam cor e brilho.
             </p>
           </div>
           <div class="highlight-item">
-            <i class="fas fa-leaf"></i>
+            <i class="fas fa-magic"></i>
             <p>
-              <strong>Versatilidade:</strong> Peças pensadas para todos os
-              momentos.
-            </p>
-          </div>
-          <div class="highlight-item">
-            <i class="fas fa-percentage"></i>
-            <p>
-              <strong>50% OFF:</strong> Aproveite as peças favoritas com
-              desconto especial.
+              <strong>Texturas tramadas:</strong> Acabamentos únicos que prometem ser hit da temporada.
             </p>
           </div>
         </div>
