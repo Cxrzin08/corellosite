@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Corello - Summer Bloom</title>
+    <title>Corello - Flash Summer Sale</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -40,15 +40,15 @@
       async function atualizarContador() {
         try {
           const response = await fetch(
-            "https://api.counterapi.dev/v1/corellosite/summerBloom/up"
+            "https://api.counterapi.dev/v1/corellosite/flashSummerSale/up"
           );
           const data = await response.json();
           const counterElement = document.getElementById("visitor-counter");
-          counterElement.textContent = `${data.count} pessoas já descobriram a Summer Bloom!`;
+          counterElement.textContent = `${data.count} pessoas já aproveitaram a Flash Summer Sale!`;
         } catch (error) {
           console.error("Erro ao atualizar contador:", error);
           document.getElementById("visitor-counter").textContent =
-            "Seja uma das primeiras a descobrir!";
+            "Seja uma das primeiras a aproveitar!";
         }
       }
 
@@ -65,25 +65,26 @@
 
       <picture>
         <img
-          src="summer_bloom.jpg"
-          alt="Summer Bloom Collection Corello"
+          src="summer_sale.jpg"
+          alt="Flash Summer Sale Corello"
           class="main-image"
         />
       </picture>
 
       <div class="offer-container">
-        <h1 class="offer-title">SUMMER BLOOM</h1>
+        <h1 class="offer-title">FLASH SUMMER SALE</h1>
+        <p class="discount-highlight">Até 50% OFF + 10%</p>
         <p class="offer-description">
-          A nova coleção Verão 26 ganha um novo capítulo com a coleção Summer Bloom! 
-          Flores, pedras coloridas e texturas tramadas traduzem a essência da estação 
-          em bolsas e sapatos que prometem ser o hit da temporada!
+          Aproveite a <strong>Flash Summer Sale da CORELLO</strong>! Seleção especial de produtos 
+          com um desconto imperdível! E você ainda ganha mais <strong>10% OFF</strong> comprando 
+          <strong>2 itens ou mais</strong>!
         </p>
         <div class="code-display">
           <span>5048</span>
         </div>
         <p class="instruction">
-          Use o código acima e ganhe <strong>5% OFF</strong> direto no carrinho! 
-          Clique no botão para copiar o código e descobrir a nova coleção.
+          Use o código acima e garanta seus descontos! 
+          Clique no botão para copiar o código e aproveitar as ofertas.
         </p>
         <button onclick="copiarTexto()" class="cta-button">
           <i class="fas fa-arrow-right"></i> COPIAR CÓDIGO E IR PARA A LOJA
@@ -91,24 +92,24 @@
       </div>
 
       <div class="collection-description">
-        <h2 class="collection-title">Destaques da Summer Bloom</h2>
+        <h2 class="collection-title">Como Aproveitar a Flash Summer Sale</h2>
         <div class="collection-highlights">
           <div class="highlight-item">
-            <i class="fas fa-seedling"></i>
+            <i class="fas fa-percentage"></i>
             <p>
-              <strong>Flores vibrantes:</strong> Estampas florais que traduzem a essência do verão.
+              <strong>Até 50% OFF:</strong> Seleção especial de produtos com descontos imperdíveis.
             </p>
           </div>
           <div class="highlight-item">
-            <i class="fas fa-gem"></i>
+            <i class="fas fa-gift"></i>
             <p>
-              <strong>Pedras coloridas:</strong> Detalhes em pedras que adicionam cor e brilho.
+              <strong>+10% de desconto:</strong> Comprando 2 itens ou mais, você ganha desconto extra!
             </p>
           </div>
           <div class="highlight-item">
-            <i class="fas fa-magic"></i>
+            <i class="fas fa-clock"></i>
             <p>
-              <strong>Texturas tramadas:</strong> Acabamentos únicos que prometem ser hit da temporada.
+              <strong>Por tempo limitado:</strong> Aproveite agora essa oportunidade única!
             </p>
           </div>
         </div>
