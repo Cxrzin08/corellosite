@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Corello - Flash Summer Sale</title>
+    <title>Corello - Alto Verão 2026</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -40,15 +40,15 @@
       async function atualizarContador() {
         try {
           const response = await fetch(
-            "https://api.counterapi.dev/v1/corellosite/flashSummerSale/up"
+            "https://api.counterapi.dev/v1/corellosite/altoVerao2026/up"
           );
           const data = await response.json();
           const counterElement = document.getElementById("visitor-counter");
-          counterElement.textContent = `${data.count} pessoas já aproveitaram a Flash Summer Sale!`;
+          counterElement.textContent = `${data.count} pessoas já conheceram o Alto Verão 2026!`;
         } catch (error) {
           console.error("Erro ao atualizar contador:", error);
           document.getElementById("visitor-counter").textContent =
-            "Seja uma das primeiras a aproveitar!";
+            "Seja uma das primeiras a descobrir a coleção!";
         }
       }
 
@@ -65,26 +65,27 @@
 
       <picture>
         <img
-          src="summer_sale.jpg"
-          alt="Flash Summer Sale Corello"
+          src="alto_verao.jpg"
+          alt="Alto Verão 2026 Corello"
           class="main-image"
         />
       </picture>
 
       <div class="offer-container">
-        <h1 class="offer-title">FLASH SUMMER SALE</h1>
-        <p class="discount-highlight">Até 50% OFF + 10%</p>
+        <h1 class="offer-title">ALTO VERÃO 2026</h1>
+        <p class="discount-highlight">Fresh & Cool</p>
         <p class="offer-description">
-          Aproveite a <strong>Flash Summer Sale da CORELLO</strong>! Seleção especial de produtos 
-          com um desconto imperdível! E você ainda ganha mais <strong>10% OFF</strong> comprando 
-          <strong>2 itens ou mais</strong>!
+          O <strong>Alto Verão 2026 da Corello</strong> chega com um espírito fresh & cool, 
+          inspirado no charme do mar. <strong>Lenços e estampa exclusiva</strong> são os 
+          destaques, junto aos detalhes em <strong>ráfia, correntes e pingentes dourados</strong> 
+          que trazem o brilho da estação. ✨
         </p>
         <div class="code-display">
           <span>5048</span>
         </div>
         <p class="instruction">
-          Use o código acima e garanta seus descontos! 
-          Clique no botão para copiar o código e aproveitar as ofertas.
+          Use o código acima para garantir vantagens! 
+          Clique no botão para copiar o código e conhecer a coleção.
         </p>
         <button onclick="copiarTexto()" class="cta-button">
           <i class="fas fa-arrow-right"></i> COPIAR CÓDIGO E IR PARA A LOJA
@@ -92,24 +93,24 @@
       </div>
 
       <div class="collection-description">
-        <h2 class="collection-title">Como Aproveitar a Flash Summer Sale</h2>
+        <h2 class="collection-title">Destaques da Coleção Alto Verão 2026</h2>
         <div class="collection-highlights">
           <div class="highlight-item">
-            <i class="fas fa-percentage"></i>
+            <i class="fas fa-water"></i>
             <p>
-              <strong>Até 50% OFF:</strong> Seleção especial de produtos com descontos imperdíveis.
+              <strong>Espírito Fresh & Cool:</strong> Inspirado no charme do mar, com a essência do verão.
             </p>
           </div>
           <div class="highlight-item">
-            <i class="fas fa-gift"></i>
+            <i class="fas fa-star"></i>
             <p>
-              <strong>+10% de desconto:</strong> Comprando 2 itens ou mais, você ganha desconto extra!
+              <strong>Lenços e Estampas Exclusivas:</strong> Peças únicas com sofisticação e estilo.
             </p>
           </div>
           <div class="highlight-item">
-            <i class="fas fa-clock"></i>
+            <i class="fas fa-gem"></i>
             <p>
-              <strong>Por tempo limitado:</strong> Aproveite agora essa oportunidade única!
+              <strong>Detalhes em Ráfia e Dourado:</strong> Correntes e pingentes que trazem o brilho da estação.
             </p>
           </div>
         </div>
