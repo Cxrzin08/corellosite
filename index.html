@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Corello - Alto Verão 2026</title>
+    <title>Corello - Esquenta Black Friday</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -40,15 +40,15 @@
       async function atualizarContador() {
         try {
           const response = await fetch(
-            "https://api.counterapi.dev/v1/corellosite/altoVerao2026/up"
+            "https://api.counterapi.dev/v1/corellosite/esquentaBlackFriday2024/up"
           );
           const data = await response.json();
           const counterElement = document.getElementById("visitor-counter");
-          counterElement.textContent = `${data.count} pessoas já conheceram o Alto Verão 2026!`;
+          counterElement.textContent = `${data.count} pessoas já aproveitaram o Esquenta Black Friday!`;
         } catch (error) {
           console.error("Erro ao atualizar contador:", error);
           document.getElementById("visitor-counter").textContent =
-            "Seja uma das primeiras a descobrir a coleção!";
+            "Seja uma das primeiras a aproveitar as ofertas!";
         }
       }
 
@@ -64,28 +64,26 @@
       </div>
 
       <picture>
-        <img
-          src="alto_verao.jpg"
-          alt="Alto Verão 2026 Corello"
-          class="main-image"
-        />
+        <video autoplay loop muted playsinline class="main-image">
+          <source src="BLACKFRIDAY_2025_DESK.mp4" type="video/mp4">
+        </video>
       </picture>
 
       <div class="offer-container">
-        <h1 class="offer-title">ALTO VERÃO 2026</h1>
-        <p class="discount-highlight">Fresh & Cool</p>
+        <h1 class="offer-title">ESQUENTA BLACK FRIDAY 🔥</h1>
+        <p class="discount-highlight">ATÉ 50% OFF</p>
         <p class="offer-description">
-          O <strong>Alto Verão 2026 da Corello</strong> chega com um espírito fresh & cool, 
-          inspirado no charme do mar. <strong>Lenços e estampa exclusiva</strong> são os 
-          destaques, junto aos detalhes em <strong>ráfia, correntes e pingentes dourados</strong> 
-          que trazem o brilho da estação. ✨
+          Começou o <strong>Esquenta Black Friday da Corello!</strong> 🔥
+          <strong>Itens selecionados com até 50% OFF!</strong>
+          Os itens disponíveis não terão reposição.
+          Aproveite para garantir a sua escolha favorita hoje mesmo!
         </p>
         <div class="code-display">
           <span>5048</span>
         </div>
         <p class="instruction">
           Use o código acima para garantir vantagens! 
-          Clique no botão para copiar o código e conhecer a coleção.
+          Clique no botão para copiar o código e aproveitar as ofertas.
         </p>
         <button onclick="copiarTexto()" class="cta-button">
           <i class="fas fa-arrow-right"></i> COPIAR CÓDIGO E IR PARA A LOJA
@@ -93,24 +91,24 @@
       </div>
 
       <div class="collection-description">
-        <h2 class="collection-title">Destaques da Coleção Alto Verão 2026</h2>
+        <h2 class="collection-title">Destaques do Esquenta Black Friday</h2>
         <div class="collection-highlights">
           <div class="highlight-item">
-            <i class="fas fa-water"></i>
+            <i class="fas fa-fire"></i>
             <p>
-              <strong>Espírito Fresh & Cool:</strong> Inspirado no charme do mar, com a essência do verão.
+              <strong>Até 50% OFF:</strong> Descontos imperdíveis em itens selecionados!
             </p>
           </div>
           <div class="highlight-item">
-            <i class="fas fa-star"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <p>
-              <strong>Lenços e Estampas Exclusivas:</strong> Peças únicas com sofisticação e estilo.
+              <strong>Sem Reposição:</strong> Os itens disponíveis são limitados. Aproveite agora!
             </p>
           </div>
           <div class="highlight-item">
-            <i class="fas fa-gem"></i>
+            <i class="fas fa-tags"></i>
             <p>
-              <strong>Detalhes em Ráfia e Dourado:</strong> Correntes e pingentes que trazem o brilho da estação.
+              <strong>Código Exclusivo:</strong> Use o cupom 5048 e garanta suas vantagens!
             </p>
           </div>
         </div>
