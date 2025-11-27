@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Corello - Esquenta Black Friday</title>
+    <title>Corello - Black Friday</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -40,11 +40,11 @@
       async function atualizarContador() {
         try {
           const response = await fetch(
-            "https://api.counterapi.dev/v1/corellosite/esquentaBlackFriday2024/up"
+            "https://api.counterapi.dev/v1/corellosite/blackFriday2024/up"
           );
           const data = await response.json();
           const counterElement = document.getElementById("visitor-counter");
-          counterElement.textContent = `${data.count} pessoas já aproveitaram o Esquenta Black Friday!`;
+          counterElement.textContent = `${data.count} pessoas já aproveitaram a Black Friday!`;
         } catch (error) {
           console.error("Erro ao atualizar contador:", error);
           document.getElementById("visitor-counter").textContent =
@@ -70,13 +70,13 @@
       </picture>
 
       <div class="offer-container">
-        <h1 class="offer-title">ESQUENTA BLACK FRIDAY 🔥</h1>
-        <p class="discount-highlight">ATÉ 50% OFF</p>
+        <h1 class="offer-title">BLACK FRIDAY 🔥</h1>
+        <p class="discount-highlight">TUDO 50% OFF</p>
         <p class="offer-description">
-          Começou o <strong>Esquenta Black Friday da Corello!</strong> 🔥
-          <strong>Itens selecionados com até 50% OFF!</strong>
-          Os itens disponíveis não terão reposição.
-          Aproveite para garantir a sua escolha favorita hoje mesmo!
+          <strong>TUDO 50% OFF! Na Black Friday da Corello!</strong> 🔥
+          Seleção especial de <strong>Sapatos pela metade do preço!</strong>
+          (itens selecionados, exceto Bolsas, válido por tempo limitado)
+          Não deixe de conferir também a seleção de <strong>Bolsas com até 40% Off!</strong>
         </p>
         <div class="code-display">
           <span>5048</span>
@@ -91,24 +91,24 @@
       </div>
 
       <div class="collection-description">
-        <h2 class="collection-title">Destaques do Esquenta Black Friday</h2>
+        <h2 class="collection-title">Destaques da Black Friday</h2>
         <div class="collection-highlights">
           <div class="highlight-item">
             <i class="fas fa-fire"></i>
             <p>
-              <strong>Até 50% OFF:</strong> Descontos imperdíveis em itens selecionados!
+              <strong>Sapatos 50% OFF:</strong> Seleção especial pela metade do preço!
             </p>
           </div>
           <div class="highlight-item">
-            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-shopping-bag"></i>
             <p>
-              <strong>Sem Reposição:</strong> Os itens disponíveis são limitados. Aproveite agora!
+              <strong>Bolsas até 40% OFF:</strong> Descontos imperdíveis também nas bolsas!
             </p>
           </div>
           <div class="highlight-item">
-            <i class="fas fa-tags"></i>
+            <i class="fas fa-clock"></i>
             <p>
-              <strong>Código Exclusivo:</strong> Use o cupom 5048 e garanta suas vantagens!
+              <strong>Tempo Limitado:</strong> Aproveite agora, válido por tempo limitado!
             </p>
           </div>
         </div>
