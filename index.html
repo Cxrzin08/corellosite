@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Corello - Tempo de Celebrar</title>
+  <title>Corello - Sale de Verão</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
@@ -27,13 +27,13 @@
 
     async function atualizarContador() {
       try {
-        const response = await fetch("https://api.counterapi.dev/v1/corellosite/natal2025/up");
+        const response = await fetch("https://api.counterapi.dev/v1/corellosite/saleverao2025/up");
         const data = await response.json();
         const counterElement = document.getElementById("visitor-counter");
-        counterElement.textContent = `${data.count} pessoas já garantiram o brinde de Natal!`;
+        counterElement.textContent = `${data.count} pessoas já aproveitaram a SALE de verão!`;
       } catch (error) {
         console.error("Erro ao atualizar contador:", error);
-        document.getElementById("visitor-counter").textContent = "Seja uma das primeiras a garantir o brinde!";
+        document.getElementById("visitor-counter").textContent = "Seja uma das primeiras a aproveitar!";
       }
     }
     window.onload = atualizarContador;
@@ -46,27 +46,20 @@
     <div class="brand-logo animate__animated animate__zoomIn">
       <span>CORELLO</span>
     </div>
-
-    <!--
     <picture>
       <video autoplay loop muted playsinline class="main-image">
-      <source src="NATAL_2025_DESK.mp4" type="video/mp4">
+      <source src="SALE_VERAO_2025_DESK.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
       </video>
     </picture>
-    -->
-
-    <picture>
-      <img src="NATAL_2025_DESK.jpg" alt="Coleção Natal 2025" class="main-image">
-    </picture>
 
     <div class="offer-container">
-      <h1 class="offer-title">TEMPO DE CELEBRAR ✨</h1>
-      <p class="discount-highlight">COLEÇÃO DE NATAL 2025</p>
+      <h1 class="offer-title">SALE DE VERÃO 🔥</h1>
+      <p class="discount-highlight">ATÉ 50% DE DESCONTO</p>
 
       <p class="offer-description">
-        <strong>TEMPO DE CELEBRAR!</strong><br>
-        A coleção Tempo de Celebrar apresenta peças que iluminam a temporada, com designs modernos e festivos reunidos em um mix sofisticado criado para traduzir a magia dessa época especial.
+        <strong>COMEÇOU A SALE DE VERÃO DA CORELLO!</strong><br>
+        Seleção especial de produtos com até 50% de desconto! Peças incríveis com preços imperdíveis. Renove seu guarda-roupa para o verão com muito estilo e economia!
       </p>
 
       <div class="code-display">
@@ -74,8 +67,8 @@
       </div>
 
       <p class="instruction">
-        <strong>Antecipe suas compras de Natal e ganhe SPECIAL GIFT Tote Bag exclusiva nas compras acima de R$ 799*</strong><br>
-        (estoque limitado – corra!)
+        <strong>Use o código acima e ganhe MAIS 5% de desconto em todo o site!</strong><br>
+        (Promoção válida por tempo limitado, enquanto durar os estoques)
       </p>
 
       <button onclick="copiarTexto()" class="cta-button">
@@ -87,16 +80,16 @@
       <h2 class="collection-title">Por que aproveitar agora?</h2>
       <div class="collection-highlights">
         <div class="highlight-item">
-          <i class="fas fa-gift"></i>
-          <p><strong>Tote Bag Exclusiva de Brinde</strong><br>Em compras acima de R$ 799 ou mais</p>
+          <i class="fas fa-fire"></i>
+          <p><strong>Até 50% OFF</strong><br>Em produtos selecionados da coleção</p>
         </div>
         <div class="highlight-item">
-          <i class="fas fa-star"></i>
-          <p><strong>Peças Exclusivas de Natal</strong><br>Edição limitada da coleção Tempo de Celebrar</p>
+          <i class="fas fa-percent"></i>
+          <p><strong>Mais 5% de Desconto</strong><br>Use o código 5048 e economize ainda mais</p>
         </div>
         <div class="highlight-item">
-          <i class="fas fa-truck"></i>
-          <p><strong>Entrega Garantida para o Natal</strong><br>Compre com antecedência e receba a tempo</p>
+          <i class="fas fa-clock"></i>
+          <p><strong>Tempo Limitado</strong><br>Aproveite enquanto durar os estoques</p>
         </div>
       </div>
     </div>
