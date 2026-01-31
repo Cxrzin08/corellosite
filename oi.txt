@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corello - Sale de Verão</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function copiarTexto() {
+      const codigo = "5048";
+      navigator.clipboard.writeText(codigo).then(() => {
+        const button = document.querySelector(".cta-button");
+        button.innerHTML = '<i class="fas fa-check"></i> CÓDIGO COPIADO! REDIRECIONANDO...';
+        button.classList.add("success");
+        button.disabled = true;
+
+        const confetti = document.createElement("div");
+        confetti.className = "confetti-effect";
+        document.body.appendChild(confetti);
+
+        setTimeout(() => { confetti.remove(); }, 1500);
+        setTimeout(() => { window.location.href = "https://shop.corello.com.br"; }, 1800);
+      });
+    }
+
+    async function atualizarContador() {
+      try {
+        const response = await fetch("https://api.counterapi.dev/v1/corellosite/saleverao2025/up");
+        const data = await response.json();
+        const counterElement = document.getElementById("visitor-counter");
+        counterElement.textContent = `${data.count} pessoas já aproveitaram a SALE de verão!`;
+      } catch (error) {
+        console.error("Erro ao atualizar contador:", error);
+        document.getElementById("visitor-counter").textContent = "Seja uma das primeiras a aproveitar!";
+      }
+    }
+    window.onload = atualizarContador;
+  </script>
+</head>
+<body>
+  <div class="hero-background"></div>
+
+  <div class="main-container animate__animated animate__fadeIn">
+    <div class="brand-logo animate__animated animate__zoomIn">
+      <span>CORELLO</span>
+    </div>
+    <picture>
+      <video autoplay loop muted playsinline class="main-image">
+      <source src="SALE_VERAO_2025_DESK.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+      </video>
+    </picture>
+
+    <div class="offer-container">
+      <h1 class="offer-title">SALE DE VERÃO 🔥</h1>
+      <p class="discount-highlight">ATÉ 50% DE DESCONTO</p>
+
+      <p class="offer-description">
+        <strong>COMEÇOU A SALE DE VERÃO DA CORELLO!</strong><br>
+        Seleção especial de produtos com até 50% de desconto! Peças incríveis com preços imperdíveis. Renove seu guarda-roupa para o verão com muito estilo e economia!
+      </p>
+
+      <div class="code-display">
+        <span>5048</span>
+      </div>
+
+      <p class="instruction">
+        <strong>Use o código acima e ganhe MAIS 5% de desconto em todo o site!</strong><br>
+        (Promoção válida por tempo limitado, enquanto durar os estoques)
+      </p>
+
+      <button onclick="copiarTexto()" class="cta-button">
+        <i class="fas fa-arrow-right"></i> COPIAR CÓDIGO E IR PARA A LOJA
+      </button>
+    </div>
+
+    <div class="collection-description">
+      <h2 class="collection-title">Por que aproveitar agora?</h2>
+      <div class="collection-highlights">
+        <div class="highlight-item">
+          <i class="fas fa-fire"></i>
+          <p><strong>Até 50% OFF</strong><br>Em produtos selecionados da coleção</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-percent"></i>
+          <p><strong>Mais 5% de Desconto</strong><br>Use o código 5048 e economize ainda mais</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-clock"></i>
+          <p><strong>Tempo Limitado</strong><br>Aproveite enquanto durar os estoques</p>
+        </div>
+      </div>
+    </div>
+
+    <p id="visitor-counter" class="visitor-counter">
+      Carregando número de visitantes...
+    </p>
+  </div>
+</body>
+</html>
+
+
+quero por o video prefall.mp4
+
+
+
