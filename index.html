@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Corello - Pre Fall 26</title>
+  <title>Corello - SALE TUDO 50% OFF</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+
   <script>
     function irParaLoja() {
       const button = document.querySelector(".cta-button");
@@ -18,24 +20,33 @@
       confetti.className = "confetti-effect";
       document.body.appendChild(confetti);
 
-      setTimeout(() => { confetti.remove(); }, 1500);
-      setTimeout(() => { window.location.href = "https://shop.corello.com.br"; }, 1800);
+      setTimeout(() => confetti.remove(), 1500);
+      setTimeout(() => {
+        window.location.href = "https://shop.corello.com.br";
+      }, 1800);
+    }
+
+    function copiarCodigo() {
+      const codigo = "5048";
+      navigator.clipboard.writeText(codigo);
     }
 
     async function atualizarContador() {
       try {
-        const response = await fetch("https://api.counterapi.dev/v1/corellosite/prefall26/up");
+        const response = await fetch("https://api.counterapi.dev/v1/corellosite/saletudo50/up");
         const data = await response.json();
-        const counterElement = document.getElementById("visitor-counter");
-        counterElement.textContent = `${data.count} pessoas já conheceram a Pre Fall 26!`;
+        document.getElementById("visitor-counter").textContent =
+          `${data.count} pessoas já aproveitaram a SALE TUDO 50% OFF!`;
       } catch (error) {
-        console.error("Erro ao atualizar contador:", error);
-        document.getElementById("visitor-counter").textContent = "Seja uma das primeiras a conhecer!";
+        document.getElementById("visitor-counter").textContent =
+          "Corra! Últimos dias da SALE TUDO 50% OFF!";
       }
     }
+
     window.onload = atualizarContador;
   </script>
 </head>
+
 <body>
   <div class="hero-background"></div>
 
@@ -43,46 +54,52 @@
     <div class="brand-logo animate__animated animate__zoomIn">
       <span>CORELLO</span>
     </div>
-    <picture>
-      <video autoplay loop muted playsinline class="main-image">
-        <source src="prefall.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
-    </picture>
+
+    <video autoplay loop muted playsinline class="main-image">
+      <source src="DESK_TUDO_COM_50.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
 
     <div class="offer-container">
-      <h1 class="offer-title">PRE FALL 26 🍂</h1>
-      <p class="discount-highlight">NOVA COLEÇÃO</p>
+      <h1 class="offer-title">SALE TUDO 50% OFF 🔥</h1>
+      <p class="discount-highlight">ÚLTIMOS DIAS</p>
 
       <p class="offer-description">
-        <strong>CONHEÇA A NOVA COLEÇÃO PRE FALL 26 DA CORELLO!</strong><br>
-        A nova coleção traz a essência artesanal da marca com patchworks refinados, design moderno e a combinação perfeita de materiais nobres. Em uma paleta de cores outonal, a coleção alia tendência, conforto e sofisticação em criações versáteis.
+        <strong>COMEÇOU A SALE TUDO 50% OFF COM NOVOS ITENS SELECIONADOS!</strong><br>
+        Aproveite os últimos dias da SALE com peças incríveis pela metade do preço.
+        Novos itens adicionados e estoque limitado!
       </p>
 
+      <!-- BLOCO DO CUPOM -->
+      <div class="code-display" onclick="copiarCodigo()" title="Clique para copiar">
+        <span>5048</span>
+      </div>
+
       <p class="instruction">
-        <strong>Descubra a nova coleção e encante-se com as novidades!</strong><br>
-        Peças exclusivas que combinam tradição artesanal e modernidade.
+        Use o código <strong>5048</strong> e ganhe
+        <strong>5% DE DESCONTO EM TODO O SITE</strong>.<br>
+        Basta aplicar o cupom no carrinho no momento da compra.
       </p>
 
       <button onclick="irParaLoja()" class="cta-button">
-        <i class="fas fa-arrow-right"></i> DESCOBRIR A COLEÇÃO
+        <i class="fas fa-shopping-bag"></i> APROVEITAR AGORA
       </button>
     </div>
 
     <div class="collection-description">
-      <h2 class="collection-title">Destaques da Coleção</h2>
+      <h2 class="collection-title">Por que aproveitar?</h2>
       <div class="collection-highlights">
         <div class="highlight-item">
-          <i class="fas fa-palette"></i>
-          <p><strong>Patchworks Refinados</strong><br>Essência artesanal em cada detalhe</p>
+          <i class="fas fa-percent"></i>
+          <p><strong>50% OFF</strong><br>Itens selecionados</p>
         </div>
         <div class="highlight-item">
-          <i class="fas fa-gem"></i>
-          <p><strong>Materiais Nobres</strong><br>Qualidade e sofisticação premium</p>
+          <i class="fas fa-tag"></i>
+          <p><strong>Cupom 5048</strong><br>+ 5% OFF no site todo</p>
         </div>
         <div class="highlight-item">
-          <i class="fas fa-leaf"></i>
-          <p><strong>Paleta Outonal</strong><br>Cores que capturam a estação</p>
+          <i class="fas fa-box-open"></i>
+          <p><strong>Estoque Limitado</strong><br>Peças esgotam rápido</p>
         </div>
       </div>
     </div>
