@@ -1,171 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Corello - Fall Winter 26</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-<link rel="stylesheet" href="style.css"/>
-
-<script>
-
-async function copiarCodigo() {
-  const codigo = "5048";
-
-  try {
-    await navigator.clipboard.writeText(codigo);
-  } catch (err) {
-
-    const input = document.createElement("input");
-    input.value = codigo;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand("copy");
-    document.body.removeChild(input);
-
-  }
-
-  const display = document.querySelector(".code-display");
-  const original = display.innerHTML;
-
-  display.innerHTML = '<span><i class="fas fa-check"></i> COPIADO!</span>';
-
-  setTimeout(() => {
-    display.innerHTML = original;
-  }, 1800);
-}
-
-
-async function irParaLoja() {
-
-  await copiarCodigo();
-
-  const button = document.querySelector(".cta-button");
-
-  button.innerHTML = '<i class="fas fa-check"></i> REDIRECIONANDO...';
-  button.classList.add("success");
-  button.disabled = true;
-
-  const confetti = document.createElement("div");
-  confetti.className = "confetti-effect";
-  document.body.appendChild(confetti);
-
-  setTimeout(() => confetti.remove(), 1500);
-
-  setTimeout(() => {
-    window.location.href = "https://shop.corello.com.br";
-  }, 1800);
-
-}
-
-
-async function atualizarContador() {
-
-  try {
-
-    const response = await fetch("https://api.counterapi.dev/v1/corellosite/fallwinter26/up");
-    const data = await response.json();
-
-    document.getElementById("visitor-counter").textContent =
-      `${data.count} pessoas já descobriram o novo drop Fall Winter 26!`;
-
-  } catch (error) {
-
-    document.getElementById("visitor-counter").textContent =
-      "Novidades chegaram! Conheça o novo drop Fall Winter 26.";
-
-  }
-
-}
-
-window.onload = atualizarContador;
-
-</script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corello - Dia das Mães</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function irParaLoja() {
+      const button = document.querySelector(".cta-button");
+      button.innerHTML = '<i class="fas fa-check"></i> REDIRECIONANDO...';
+      button.classList.add("success");
+      button.disabled = true;
+      const confetti = document.createElement("div");
+      confetti.className = "confetti-effect";
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 1500);
+      setTimeout(() => {
+        window.location.href = "https://shop.corello.com.br";
+      }, 1800);
+    }
+    function copiarCodigo() {
+      const codigo = "5048";
+      navigator.clipboard.writeText(codigo);
+    }
+    async function atualizarContador() {
+      try {
+        const response = await fetch("https://api.counterapi.dev/v1/corellosite/diasdasmaes26/up");
+        const data = await response.json();
+        document.getElementById("visitor-counter").textContent =
+          `${data.count} pessoas já descobriram o novo drop Dia das Mães!`;
+      } catch (error) {
+        document.getElementById("visitor-counter").textContent =
+          "Novidades chegaram! Conheça a coleção Mãe é Arte.";
+      }
+    }
+    window.onload = atualizarContador;
+  </script>
 </head>
-
 <body>
-
-<div class="hero-background"></div>
-
-<div class="main-container animate__animated animate__fadeIn">
-
-<div class="brand-logo animate__animated animate__zoomIn">
-<span>CORELLO</span>
-</div>
-
-<video autoplay loop muted playsinline class="main-image">
-<source src="fallwinter.mp4" type="video/mp4">
-Seu navegador não suporta vídeo.
-</video>
-
-<div class="offer-container">
-
-<h1 class="offer-title">FALL WINTER 26 🐍</h1>
-
-<p class="discount-highlight">PRIMEIRO DROP DE INVERNO</p>
-
-<p class="offer-description">
-
-<strong>CONHEÇA A NOVA COLEÇÃO FALL WINTER 26 DA CORELLO!</strong><br>
-
-Python, a estampa exclusiva que protagoniza a coleção. Botas com design marcante, maxi bags
-e os famosos saltos anabela em shapes que ganham destaque em uma paleta invernal que equilibra
-atitude, conforto e sofisticação.
-
-</p>
-
-<div class="code-display" onclick="copiarCodigo()" title="Clique para copiar">
-<span>5048</span>
-</div>
-
-<p class="instruction">
-
-Use o código <strong>5048</strong> e ganhe
-<strong>5% DE DESCONTO EM TODO O SITE</strong>.<br>
-
-Basta aplicar o cupom no carrinho no momento da compra.
-
-</p>
-
-<button onclick="irParaLoja()" class="cta-button">
-<i class="fas fa-shopping-bag"></i> DESCOBRIR AGORA
-</button>
-
-</div>
-
-<div class="collection-description">
-
-<h2 class="collection-title">Por que você vai amar?</h2>
-
-<div class="collection-highlights">
-
-<div class="highlight-item">
-<i class="fas fa-fire"></i>
-<p><strong>Estampa Python</strong><br>Exclusiva e protagonista</p>
-</div>
-
-<div class="highlight-item">
-<i class="fas fa-shopping-bag"></i>
-<p><strong>Botas & Maxi Bags</strong><br>Design marcante</p>
-</div>
-
-<div class="highlight-item">
-<i class="fas fa-tag"></i>
-<p><strong>Cupom 5048</strong><br>5% OFF no site todo</p>
-</div>
-
-</div>
-
-</div>
-
-<p id="visitor-counter" class="visitor-counter">
-Carregando...
-</p>
-
-</div>
-
+  <div class="hero-background"></div>
+  <div class="main-container animate__animated animate__fadeIn">
+    <div class="brand-logo animate__animated animate__zoomIn">
+      <span>CORELLO</span>
+    </div>
+    <img src="image.png" alt="Mãe é Arte - Corello" class="main-image" />
+    <div class="offer-container">
+      <h1 class="offer-title">MÃE É ARTE ❤️</h1>
+      <p class="discount-highlight">COLEÇÃO DIA DAS MÃES</p>
+      <p class="offer-description">
+        <strong>CONHEÇA A NOVA COLEÇÃO MÃE É ARTE DA CORELLO!</strong><br>
+        A coleção celebra a maternidade como expressão artística, traduzida em peças que
+        equilibram sensibilidade e força. Com shapes modernos e atemporais, cada design
+        acompanha diferentes momentos com estilo e elegância.
+        Nas compras acima de R$ 899,00 você ganha uma linda crossbag exclusiva!
+        (Enquanto durar o estoque)
+      </p>
+      <div class="code-display" onclick="copiarCodigo()" title="Clique para copiar">
+        <span>5048</span>
+      </div>
+      <p class="instruction">
+        Use o código <strong>5048</strong> e ganhe
+        <strong>5% DE DESCONTO EM TODO O SITE</strong>.<br>
+        Basta aplicar o cupom no carrinho no momento da compra.
+      </p>
+      <button onclick="irParaLoja()" class="cta-button">
+        <i class="fas fa-shopping-bag"></i> DESCOBRIR AGORA
+      </button>
+    </div>
+    <div class="collection-description">
+      <h2 class="collection-title">Por que você vai amar?</h2>
+      <div class="collection-highlights">
+        <div class="highlight-item">
+          <i class="fas fa-heart"></i>
+          <p><strong>Mãe é Arte</strong><br>Sensibilidade e força</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-shopping-bag"></i>
+          <p><strong>Crossbag Exclusiva</strong><br>Brinde acima de R$ 899</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-tag"></i>
+          <p><strong>Cupom 5048</strong><br>5% OFF no site todo</p>
+        </div>
+      </div>
+    </div>
+    <p id="visitor-counter" class="visitor-counter">
+      Carregando número de visitantes...
+    </p>
+  </div>
 </body>
 </html>
